@@ -1,27 +1,42 @@
-// 1) Вам необхідно написати програму, яка приймає на вхід число і виводить у консоль повідомлення у форматі: Число N є простим числом, якщо число N просте, та Число N не є простим числом, якщо число N складене.
+// 1) Вам необхідно написати функцію reverseString(str), яка приймає на вхід рядок і повертає його у зворотному порядку.
 
-let number = prompt('Введіть число');
-let isPrime = true;
 
-if (number <= 1) {
-    isPrime = false;
-} else if (number <= 3) {
-    isPrime = true;
-} else if (number % 2 === 0 || number % 3 === 0) {
-    isPrime = false;
-} else {
-    for (let i = 5; i * i <= number; i += 6) {
-        if (number % i === 0 || number % (i + 2) === 0) {
-            isPrime = false;
-            break;
-        }
-    }
+const str = prompt('Введіть ваш текст:');
+
+
+
+function reverseString(str) {
+    let newText = '';
+    for (i = str.length-1; i >= 0; i--) {
+        newText += str[i];
+      }
+      alert(newText);
 }
 
-if (isPrime) {
-    alert('Число ' + number + ' є простим числом');
-} else {
-    alert('Число ' + number + ' не є простим числом');
-}
+reverseString(str);
 
- 
+
+
+// 2) Вам необхідно написати функцію isPalindrome(str), яка приймає на вхід рядок і перевіряє, чи є введений рядок паліндромом.
+
+
+// const nolan = prompt('Введіть слово');
+
+// function isPalindrome(nolan) {
+//     let firstLetter = 0;
+//     let secondLetter = nolan.length - 1;
+
+//     while (firstLetter < secondLetter) {
+//         if (nolan.length <= 3 || nolan[firstLetter] != nolan[secondLetter]) {
+//             alert('Word ' + nolan + ' is not palindrom');
+//             return;
+//         } 
+//         firstLetter++;
+//         secondLetter--;
+//     }
+//     alert('Word ' + nolan + ' is a palindrom');
+
+// }
+
+// isPalindrome(nolan);
+
