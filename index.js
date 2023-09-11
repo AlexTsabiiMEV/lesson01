@@ -1,42 +1,42 @@
-// 1) Вам необхідно написати функцію reverseString(str), яка приймає на вхід рядок і повертає його у зворотному порядку.
+// 1) Вам необхідно написати функцію doubleLetter(str), яка приймає на вхід рядок і повертає новий рядок, у якому кожен символ повторюється двічі hello ⇒ hheelllloo.
 
+// const str = prompt('Введіть слово:');
 
-const str = prompt('Введіть ваш текст:');
+// function doubleLetter(str) {
+//   let doubleStr = "";
 
-
-
-function reverseString(str) {
-    let newText = '';
-    for (i = str.length-1; i >= 0; i--) {
-        newText += str[i];
-      }
-      alert(newText);
-}
-
-reverseString(str);
-
-
-
-// 2) Вам необхідно написати функцію isPalindrome(str), яка приймає на вхід рядок і перевіряє, чи є введений рядок паліндромом.
-
-
-// const nolan = prompt('Введіть слово');
-
-// function isPalindrome(nolan) {
-//     let firstLetter = 0;
-//     let secondLetter = nolan.length - 1;
-
-//     while (firstLetter < secondLetter) {
-//         if (nolan.length <= 3 || nolan[firstLetter] != nolan[secondLetter]) {
-//             alert('Word ' + nolan + ' is not palindrom');
-//             return;
-//         } 
-//         firstLetter++;
-//         secondLetter--;
-//     }
-//     alert('Word ' + nolan + ' is a palindrom');
-
+//   for (let i = 0; i < str.length; i++) {
+//     doubleStr += str[i] + str[i];
+//   }
+//   alert(doubleStr);
 // }
 
-// isPalindrome(nolan);
+// doubleLetter(str);
+
+// 2) Вам необхідно написати функцію padString(str, length, symbol, toLeft), яка приймає на вхід рядок, число, що є довгим рядком, який ми хочемо отримати в результаті та символ, яким доповниться рядок, якщо це буде потрібно, четвертим параметром є буремний «прапор», чи додавати символи зліва або справа(за замовчуванням). Якщо 2 параметр менше, ніж довжина вихідного рядка, то виводимо вихідний рядок без змін. Приклад виклику: padString('Ivan', 6, '*') // 'Ivan**'.
+
+
+const str = prompt('Введіть рядок: ');
+const strLength = '15';
+const symbol = '*';
+const toLeft = false;
+
+function padString(str, strLength, symbol, toLeft) 
+
+{
+  if (str.length >= strLength) {
+    alert(str); 
+  } else if (str.length < strLength && toLeft === true) {
+    alert(str.padStart(strLength,symbol)); 
+  } else {
+    alert(str.padEnd(strLength,symbol)); 
+  }
+}
+
+padString(str, strLength, symbol, toLeft) 
+
+
+
+
+
 
