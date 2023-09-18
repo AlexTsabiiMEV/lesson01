@@ -1,45 +1,25 @@
-// 1) Напишіть функцію capitalizeStrings, яка приймає на вхід масив рядків і повертає новий масив, у якому кожен рядок має першу літеру у верхньому регістрі, а решту літер - у нижньому регістрі.
+// 1) Створіть функцію reverseArray, яка приймає масив і повертає новий масив, елементи якого розташовані у зворотному порядку.
 
 
-// const words = ["apple", "banaNA", "kiWi", "ORANGE"];
+const originalArray = [1, 2, 3, 4, 5];
+const reversedArray = reverseArray(originalArray);
 
-
-// function capitalizeStrings (words) { 
-
-//   let capitalizeWord = words.map(item => {
-//     const capitalizeFirstLetter = item.charAt(0).toUpperCase()
-//     const restItems = item.slice(1).toLowerCase();
-//     return capitalizeFirstLetter + restItems;
-//   })
-
-//   return capitalizeWord;
-
-// }
-
-// console.log(capitalizeStrings(words))
-
-
-// 2) Напишіть функцію findCommonElements, яка приймає на вхід два масиви і повертає новий масив, що містить елементи, які є в обох вихідних масивах.
-
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
-
-function findCommonElements (array1, array2) {
-
-  const commonItems = [];
-
-  for (let i = 0; i < array1.length; i += 1) {
-
-    if (array2.includes(array1[i])){
-      commonItems.push(array1[i]);
-    }
-  }
-return commonItems;
-
+function reverseArray(originalArray) {
+  return originalArray.reverse();
 }
 
-console.log(findCommonElements(array1, array2)); // [3, 4, 5]
+console.log(reversedArray);
 
 
+// 2) Створіть функцію uniqueValues, яка приймає два масиви і повертає новий масив, що містить тільки унікальні значення з обох масивів (без дублікатів).
+
+// const array1 = [1, 2, 3, 4, 5];
+// const array2 = [3, 4, 5, 6, 7];
+// const uniqueValuesArray = uniqueValues(array1, array2);
+
+// function uniqueValues (array1, array2) {
+//   return 
+// }
 
 
+// console.log(uniqueValuesArray);
