@@ -1,15 +1,21 @@
-// 1) Вам необхідно написати функцію-декоратор logArguments(fn), яка приймає на вхід функцію і додає можливість логувати всі аргументи, передані у функцію-аргумент.
+// 1) Вам необхідно написати функцію summarize(num), яка приймає на вхід число і повертає функцію, яка під час виклику додає це число до аргументу і повертає результат. Якщо аргумент не передано, то додається одиниця. Наприклад, якщо функція викликається з аргументом 5, то функція, що повертається, повинна при виклику з аргументом 3 повернути 8 (тому що 3 + 5 = 8) або 6, якщо аргумент не буде передано.
 
-function logArguments(fn) {
-  return function (...args) {
-    console.log(`Arguments: ${args}`);
-    return fn.bind(this)(...args);
-  }
+let num = 5;
+
+function summarize(num) {
+
+  let count = +prompt('Введіть число:') || 1;
+
+  return function() {
+    return count + num;
+  };
+
 }
 
-const newArgs = logArguments(function newArgs(value1, value2) {
-  return value1 + value2;
-});
+let counter = summarize(num);
+alert(counter());
 
-console.log(newArgs(1, 2));
+
+
+
 
