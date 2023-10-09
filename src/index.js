@@ -1,21 +1,76 @@
-// 1) Вам необхідно написати функцію summarize(num), яка приймає на вхід число і повертає функцію, яка під час виклику додає це число до аргументу і повертає результат. Якщо аргумент не передано, то додається одиниця. Наприклад, якщо функція викликається з аргументом 5, то функція, що повертається, повинна при виклику з аргументом 3 повернути 8 (тому що 3 + 5 = 8) або 6, якщо аргумент не буде передано.
+// Вам необхідно написати додаток Todo list, використовуючи синтаксис класів.
+//  У списку нотаток повинні бути методи для додавання нової нотатки, видалення, 
+//  редагування та отримання повної інформації про нотатку, 
+//  а так само отримання списку всіх нотаток. 
+//  Крім цього, у користувача має бути можливість позначити замітку, як виконану,
+//   і отримання інформації про те, скільки всього нотаток у списку і скільки залишилося невиконань.
+//   Нотатки не повинні бути порожніми.
 
-let num = 5;
 
-function summarize(num) {
+class TodoList {
+  constructor() {
+    this.notes = [];
+    this.idCounter = 1;
+  }
+  
 
-  let count = +prompt('Введіть число:') || 1;
+  addNote(noteText) {
 
-  return function() {
-    return count + num;
-  };
+    const note = {
+      id: this.idCounter++,
+      text: noteText,
+      completed: false,
+    };
+    this.notes.push(note);
+  }
+
+  deleteNote(noteId) {
+    this.notes = this.notes.filter(note => note.id !== noteId);
+  }
+
+  markAsComplete(noteId) { 
+    const note = this.notes.find(note => note.id === noteId);
+    if (note) {
+      note.completed = true;
+    } 
+  }
+
+  editNote(noteId, noteText) {
+    const note = this.notes.find(note => note.id === noteId);
+
+    if (note) {
+      note.text = noteText;
+    } 
+
+  }
+
+  getNotes() {
+    return this.notes;
+  }
+
+  getNotesCount() {
+    return this.notes.length;
+  }
+
+  getNotComleted() {
+    return this.notes.filter(note => !note.completed).length;
+  }
 
 }
 
-let counter = summarize(num);
-alert(counter());
+const todoList = new TodoList();
 
-
+todoList.addNote("Hello");
+todoList.addNote("Second Hello");
+todoList.addNote("Third Hello");
+console.log("All notes count: ", todoList.getNotesCount());
+console.log("Notes list: ", todoList.getNotes());
+todoList.deleteNote(2);
+todoList.markAsComplete(1);
+todoList.editNote(1, "CHANGED HELLO");
+console.log("All notes count: ", todoList.getNotesCount());
+console.log("Notes list: ", todoList.getNotes());
+console.log("Not completed notes: ", todoList.getNotComleted());
 
 
 
