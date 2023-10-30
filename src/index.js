@@ -1,19 +1,19 @@
-// 1) Напишіть функцію, яка приймає масив чисел як аргумент і повертаєPromise.Promiseмає бути виконаний через 3 секунди і повернути суму всіх чисел із масиву.
+1) Напишіть функцію-генераторfibonacci, яка повертає наступне число Фібоначчі при кожному виклику. Генератор повинен зупинитися після досягнення заданої межіn.
 
-const newArray = [1,2,3,4,5,6];
-
-  function sumArrayPromise(newArray) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        var sum = 0;
-        for (var i = 0; i < newArray.length; i++) {
-        sum += newArray[i];}
-        resolve(sum);
-      }, 3000);
-    });
+function* fibonacci(limit) {
+  let initialVal = 0;
+  let currentVal = 1;
+  while (initialVal <= currentVal) {
+    yield initialVal;
+    [initialVal, currentVal] = [currentVal, initialVal + currentVal];
   }
-  
-  sumArrayPromise(newArray)
-    .then(result => {
-      console.log(result);
-    });
+}
+
+const fibGen = fibonacci(10);
+
+console.log(fibGen.next().value);
+console.log(fibGen.next().value);
+console.log(fibGen.next().value);
+console.log(fibGen.next().value);
+console.log(fibGen.next().value);
+console.log(fibGen.next().value);
